@@ -20,7 +20,6 @@ public class Venda {
             throw new VendaBuidaException("Per fer una venda primer has d’afegir productes");
         } else {
             for (Producte p: llistaProductes) {
-                //Afegir ArrayIndexOutOfBoundsException?
                 preuTotal += p.getPreu();
             }
         }

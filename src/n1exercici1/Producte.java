@@ -13,4 +13,8 @@ public class Producte {
     public float getPreu() {
         return preu;
     }
+
+    public String toString() {
+        return "Nom: " + nom + ".\n" + "Preu: " + preu + ".";
+    }
 }
