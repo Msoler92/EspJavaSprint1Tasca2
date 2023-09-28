@@ -14,7 +14,7 @@ public class GestioButaques { //Done
             butaques.add(butaca);
         }
         else {
-            throw new ExcepcioButacaOcupada("Error: butaca ocupada");
+            throw new ExcepcioButacaOcupada("ExcepcioButacaOcupada: butaca ocupada");
         }
     }
     public void eliminarButaca(int fila, int seient) throws ExcepcioButacaLliure {
@@ -22,10 +22,11 @@ public class GestioButaques { //Done
         if (index != -1) {
             butaques.remove(index);
         } else {
-            throw new ExcepcioButacaLliure("Error: butaca lliure");
+            throw new ExcepcioButacaLliure("ExcepcioButacaLliure: butaca lliure");
         }
     }
-    public int cercarButaca(int fila, int seient) { //Fer amb equals() ??
+
+    public int cercarButaca(int fila, int seient) {
         int size = butaques.size();
         int index = size - 1;
         boolean found = false;
