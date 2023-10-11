@@ -1,15 +1,19 @@
-package n3exercici1;
+package n3exercici1.managers;
+import n3exercici1.handlers.Butaca;
+import n3exercici1.excepcions.ExcepcioButacaLliure;
+import n3exercici1.excepcions.ExcepcioButacaOcupada;
+
 import java.util.ArrayList;
 
-public class GestioButaques { //Done
+public class GestioButaques {
     private ArrayList<Butaca> butaques;
     public GestioButaques() {
-        butaques = new ArrayList<Butaca>();
+        butaques = new ArrayList<>();
     }
     public ArrayList<Butaca> getButaques() {
         return butaques;
     }
-    public void afegirButaca(Butaca butaca) throws ExcepcioButacaOcupada{
+    public void afegirButaca(Butaca butaca) throws ExcepcioButacaOcupada {
         if(cercarButaca(butaca.getFila(), butaca.getSeient()) == -1) {
             butaques.add(butaca);
         }

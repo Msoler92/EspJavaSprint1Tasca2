@@ -1,10 +1,14 @@
-package n3exercici1;
+package n3exercici1.handlers;
+import n3exercici1.utils.Entrada;
+import n3exercici1.excepcions.*;
+import n3exercici1.managers.GestioButaques;
+
 import java.util.ArrayList;
 
 public class Cine {
-    int numFiles;
-    int numSeients;
-    GestioButaques gestor;
+    private int numFiles;
+    private int numSeients;
+    private GestioButaques gestor;
     public Cine() {
         gestor = new GestioButaques();
         demanarDadesInicials();
@@ -54,7 +58,7 @@ public class Cine {
 
     private void mostrarButaques() {
         ArrayList<Butaca> butaques = gestor.getButaques();
-        if (butaques.size() > 0) {
+        if (!butaques.isEmpty()) {
             for (Butaca butaca: butaques) {
                 System.out.println(butaca);
             }
@@ -88,7 +92,8 @@ public class Cine {
             idPersona = introduirPersona();
             gestor.afegirButaca(new Butaca (fila, seient, idPersona));
             System.out.println("Butaca reservada.");
-        } catch (ExcepcioFilaIncorrecta | ExcepcioSeientIncorrecte | ExcepcioNomPersonaIncorrecte | ExcepcioButacaOcupada e) {
+        } catch (ExcepcioFilaIncorrecta | ExcepcioSeientIncorrecte | ExcepcioNomPersonaIncorrecte |
+                 ExcepcioButacaOcupada e) {
             System.out.println(e.getMessage());
         }
     }

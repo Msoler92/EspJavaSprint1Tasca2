@@ -1,13 +1,16 @@
 package n1exercici1;
+import n1exercici1.exceptions.VendaBuidaException;
+import n1exercici1.handlers.Producte;
+import n1exercici1.handlers.Venda;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    //TODO: ArrayIndexOutOfBoundsException
     public static void main(String[] args) {
         byte input;
-        ArrayList<Producte> stock = new ArrayList<Producte>();
-        ArrayList<Producte> emptyStock = new ArrayList<Producte>();
+        ArrayList<Producte> stock = new ArrayList<>();
+        ArrayList<Producte> emptyStock = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         boolean run = true;
 
@@ -26,13 +29,8 @@ public class Main {
             input = sc.nextByte();
             switch (input) {
                 case 1:
-                    try {
-                        generaVenda(emptyStock); //Exemple VendaBuidaException si passem emptyStock com a parametre.
-                        run = false;
-                    } catch (VendaBuidaException e) {
-                        System.out.println("VendaBuidaException: " + e.getMessage());
-                    }
-
+                    generaVenda(emptyStock); //Exemple VendaBuidaException si passem emptyStock com a parametre.
+                    run = false;
                     break;
                 case 2:
                     System.out.println("Introdueixi el número d'ordre del producte:");
@@ -51,9 +49,13 @@ public class Main {
 
     }
 
-    static void generaVenda(ArrayList<Producte> productList) throws VendaBuidaException {
+    static void generaVenda(ArrayList<Producte> productList) {
         Venda novaVenda = new Venda(productList);
-        novaVenda.calculaTotal();
+        try {
+            novaVenda.calculaTotal();
+        } catch (VendaBuidaException e) {
+            System.out.println("VendaBuidaException: " + e.getMessage());
+        }
         System.out.println("Preu total de la venda: " + novaVenda.getPreuTotal());
     }
 

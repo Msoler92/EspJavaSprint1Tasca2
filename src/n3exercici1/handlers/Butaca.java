@@ -1,9 +1,9 @@
-package n3exercici1;
+package n3exercici1.handlers;
 
-public class Butaca { //Done
-    int fila;
-    int seient;
-    String idPersona;
+public class Butaca {
+    private int fila;
+    private int seient;
+    private String idPersona;
     public Butaca(int fila, int seient, String idPersona) {
         this.fila = fila;
         this.seient = seient;

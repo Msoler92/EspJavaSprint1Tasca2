@@ -1,4 +1,4 @@
-package n1exercici1;
+package n1exercici1.handlers;
 
 public class Producte {
     private String nom;

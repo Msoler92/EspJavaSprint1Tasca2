@@ -2,26 +2,20 @@ package n2exercici1;
 
 public class Main {
     public static void main(String[] args) {
-        byte e;
         boolean run = true;
-        byte b;
-        int i;
-        float f;
-        double d;
-        char c;
-        String s;
-        boolean sn;
 
         while (run) {
-            System.out.println("1.- Byte\n" +
-                    "2.- Int\n" +
-                    "3.- Float\n" +
-                    "4.- Double\n" +
-                    "5.- Char\n" +
-                    "6.- String\n" +
-                    "7.- Boolean\n");
-            e = Entrada.llegirByte("Mètode a testar:");
-            switch (e) {
+            System.out.println("""
+                    1.- Byte
+                    2.- Int
+                    3.- Float
+                    4.- Double
+                    5.- Char
+                    6.- String
+                    7.- Boolean
+                    """);
+
+            switch (Entrada.llegirByte("Mètode a testar:")) {
                 case 1:
                     System.out.println(Entrada.llegirByte("Introdueixi un Byte:"));
                     break;

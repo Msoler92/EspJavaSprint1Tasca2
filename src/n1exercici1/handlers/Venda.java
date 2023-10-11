@@ -1,4 +1,6 @@
-package n1exercici1;
+package n1exercici1.handlers;
+import n1exercici1.exceptions.VendaBuidaException;
+
 import java.util.ArrayList;
 
 public class Venda {
